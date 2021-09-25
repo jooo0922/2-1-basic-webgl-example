@@ -110,7 +110,7 @@ function draw() {
 
 function startup() {
   canvas = document.getElementById("myGLCanvas");
-  gl = createGLContext(canvas); // WebGLRenderingContext로부터 WebGL API의 메서드를 호출할 때 일반적으로 사용되는 접두사
+  gl = WebGLDebugUtils.makeDebugContext(createGLContext(canvas)); // WebGLRenderingContext로부터 WebGL API의 메서드를 호출할 때 일반적으로 사용되는 접두사
   setupShaders();
   setupBuffers();
   gl.clearColor(0.0, 0.0, 0.0, 1.0); // draw 함수에서 배경색 clear 시 사용할 색상을 검정색으로 지정함.
